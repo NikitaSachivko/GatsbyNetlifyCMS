@@ -1,12 +1,13 @@
 import { Link } from "gatsby"
 import * as React from "react"
+import * as windows1251 from 'windows-1251'
 
-
-const Bar = () => {
+const Bar = ({ location }) => {
     const getRoutes = require("../Routes/GetRoutes")
     const routes = getRoutes.default()
+    const windows1251Link = "/" + decodeURI(location.pathname.slice(1, -1)) + "/"
     return (
-        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded" style={{ backgroundColor: '#25274D', fontFamily: "Helvetica" }}>
             <div class="container flex flex-wrap justify-between items-center mx-auto">
                 <Link to="/" class="flex">
                     <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Buh.guru</span>
@@ -20,7 +21,10 @@ const Bar = () => {
                     <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-4 md:text-sm md:font-medium">
                         {routes.map((route) => {
                             return (
-                                <li style={{ color: 'white' }}>
+                                <li style={{
+                                    color: windows1251Link === route.link ? '#AAABB8' : 'white',
+                                    fontWeight: "bold", fontSize: "15px"
+                                }}>
                                     <Link to={route.link} >
                                         <p >{route.title}</p>
                                     </Link>

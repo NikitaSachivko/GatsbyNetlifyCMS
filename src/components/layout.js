@@ -22,14 +22,13 @@ const Layout = ({ location, title, routes, children }) => {
 
   return (
     <>
-      <Bar routes={routes} />
+      <Bar routes={routes} location={location} />
       <div className="global-wrapper" data-is-root-path={isRootPath}>
         <header className="global-header">{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()}, Buh.guru
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
       </div>
     </>

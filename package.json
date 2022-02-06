@@ -35,7 +35,8 @@
     "stream-browserify": "^3.0.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "windows-1251": "^3.0.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
