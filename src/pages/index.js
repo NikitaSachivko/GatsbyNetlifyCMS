@@ -7,8 +7,7 @@ import Seo from "../components/seo"
 import { getLowResolutionImageURL } from "gatsby-plugin-image"
 
 const BlogIndex = ({ data, location }) => {
-  const getRoutes = require("../components/Routes/GetRoutes")
-  const routes = getRoutes.default()
+
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   if (posts.length === 0) {
@@ -26,7 +25,7 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle} routes={routes}>
+    <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
       <ol style={{ listStyle: `none` }}>
