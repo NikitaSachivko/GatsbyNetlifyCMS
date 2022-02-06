@@ -23,14 +23,32 @@ const Layout = ({ location, title, routes, children }) => {
   return (
     <>
       <Bar routes={routes} location={location} />
+
       <div className="global-wrapper" data-is-root-path={isRootPath}>
-        <header className="global-header">{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Buh.guru
-          {` `}
-        </footer>
+        {
+          !isRootPath && (
+            <>
+              <main>{children}</main>
+              <footer>
+                © {new Date().getFullYear()}, Buh.guru
+                {` `}
+              </footer>
+            </>
+          )
+        }
+        {
+          isRootPath && (
+            <div class="flex">
+              <div class="m-auto">
+                <h1>Всё просто</h1>
+                <h2>Вопросы бухгалтерии решают профессионалы</h2>
+              </div>
+            </div>
+          )
+        }
       </div>
+
+
     </>
   )
 }
