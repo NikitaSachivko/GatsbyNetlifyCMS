@@ -4,11 +4,13 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { getLowResolutionImageURL } from "gatsby-plugin-image"
 
 const BlogIndex = ({ data, location }) => {
+  const getRoutes = require("../components/Routes/GetRoutes")
+  const routes = getRoutes.default()
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -24,7 +26,7 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} routes={routes}>
       <Seo title="All posts" />
       <Bio />
       <ol style={{ listStyle: `none` }}>

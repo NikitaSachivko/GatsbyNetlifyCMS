@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "browserify-fs": "^1.0.0",
     "gatsby": "^4.6.1",
     "gatsby-plugin-feed": "^4.6.0",
     "gatsby-plugin-gatsby-cloud": "^4.6.0",
@@ -29,13 +30,19 @@
     "netlify-cms-app": "^2.15.65",
     "prismjs": "^1.25.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "stream-browserify": "^3.0.0",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "util": "^0.12.4"
   },
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "autoprefixer": "^10.4.2",
+    "gatsby-plugin-postcss": "^5.6.0",
+    "postcss": "^8.4.6",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.18"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
