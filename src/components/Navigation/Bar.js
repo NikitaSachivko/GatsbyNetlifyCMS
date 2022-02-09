@@ -12,9 +12,9 @@ const Bar = ({ location }) => {
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" className="m-5" href="/">
-                    <h3 class="nav-link" className="text-white">Buh.guru</h3>
-                </a>
+                <Link className="ml-5 mr-5" href="/">
+                    <h1 className="text-white">Buh.guru</h1>
+                </Link>
                 <button
                     onClick={() => { mobileBar ? setMobileBar(false) : setMobileBar(true) }}
                     class="navbar-toggler"
