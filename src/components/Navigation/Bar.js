@@ -8,12 +8,12 @@ const Bar = ({ location }) => {
     const routes = getRoutes.default()
     const currentLink = "/" + decodeURI(location.pathname.slice(1, -1)) + "/"
     const [mobileBar, setMobileBar] = useState(false)
-
+    console.log(currentLink)
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <Link className="ml-5 mr-5" href="/">
-                    <h1 className="text-white">Buh.guru</h1>
+                <Link className="ml-5 mr-5 text-decoration-none" href="/">
+                    <h1 className="text-white" >Buh.guru</h1>
                 </Link>
                 <button
                     onClick={() => { mobileBar ? setMobileBar(false) : setMobileBar(true) }}
@@ -30,8 +30,10 @@ const Bar = ({ location }) => {
                         {routes.map((route) => {
                             return (
                                 <li class="nav-item">
-                                    <Link to={route.link} class="nav-link">
-                                        <p class="nav-link">{route.title}</p>
+                                    <Link to={route.link} className="text-decoration-none">
+                                        <p class={route.link === currentLink ? "nav-link text-white" : "nav-link"}>
+                                            {route.title}
+                                        </p>
                                     </Link>
                                 </li>
                             )
