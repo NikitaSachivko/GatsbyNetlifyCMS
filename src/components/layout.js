@@ -6,8 +6,7 @@ import { useState } from "react"
 import { Link } from "gatsby"
 
 // Styles
-import '../styles/lux.css'
-
+import '../styles/yeti.css'
 // Custom components
 import Bar from "./Navigation/Bar"
 
